@@ -7,7 +7,7 @@ app.use(express.urlencoded({
 }));
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.status(200).json({message:"Hello!"})
 })
 
 // routes
