@@ -1,9 +1,9 @@
 import React from 'react'
-import bgImage from "../../assets/bg.webp"
-import kahootLogo from "../../assets/logo.svg"
-import langImg from "../../assets/lang.png"
+import bgImage from "../assets/bg.webp"
+import kahootLogo from "../assets/logo.svg"
+import langImg from "../assets/lang.png"
 
-const HomePage = () => {
+const EnterPINPage = () => {
   return (
     <div
       className='w-100 h-screen overflow-hidden flex items-center justify-center'
@@ -23,4 +23,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default EnterPINPage

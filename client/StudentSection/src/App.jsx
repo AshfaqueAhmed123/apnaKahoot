@@ -1,10 +1,10 @@
 import React from 'react'
-import HomePage from './pages/studentSection/HomePage'
+import EnterPINPage from './pages/EnterPINPage'
 
 const App = () => {
   return (
     <div>
-      <HomePage/>
+      <EnterPINPage/>
     </div>
   )
 }
