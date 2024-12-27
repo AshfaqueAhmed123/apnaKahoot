@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev":"nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Ashfaque Ahmed",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "brcypt": "^1.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
