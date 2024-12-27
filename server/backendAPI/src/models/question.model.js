@@ -10,10 +10,13 @@ const questionSchema = new Schema({
         type:mongoose.Types.ObjectId,
         ref:"Quiz",
     },
-    answers:{
-        type:Array,
-        required:true,
-    },
+    answers:[
+        {
+            type:Array,
+            min:4,
+            required:true,
+        }
+    ],
     correctAnswer:{
         type:Number,
         required:true,
