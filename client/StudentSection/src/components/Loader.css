@@ -1,0 +1,19 @@
+.loadingScreen * {
+    user-select: none !important;
+    cursor: wait;
+}
+
+.loadingTip {
+    text-shadow: 2px 2px black;
+    letter-spacing: 2px;
+}
+
+@keyframes spin {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
