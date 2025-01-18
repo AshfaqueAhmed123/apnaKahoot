@@ -1,5 +1,5 @@
 import mongoose, { Schema, model } from "mongoose";
-// import bcrypt from "bcryptjs" // TODO : install bcryptjs package
+import bcrypt from "bcryptjs" 
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv";
 dotenv.config();
@@ -24,7 +24,7 @@ const userSchmea = new Schema({
     },
     quizes: [
         {
-            type: mongoose.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Quiz",
         }
     ],
@@ -36,16 +36,16 @@ const userSchmea = new Schema({
 });
 
 
-// userSchmea.pre("save", async function (next) {
-//     if (!this.isModified("password")) return next();
+userSchmea.pre("save", async function (next) {
+    if (!this.isModified("password")) return next();
 
-//     this.password = await bcrypt.hash(this.password, 10)
-//     next()
-// })
+    this.password = await bcrypt.hash(this.password, 10)
+    next()
+})
 
-// userSchmea.methods.isPasswordCorrect = async function (password) {
-//     return await bcrypt.compare(password, this.password)
-// }
+userSchmea.methods.isPasswordCorrect = async function (password) {
+    return await bcrypt.compare(password, this.password)
+}
 
 userSchmea.methods.generateAccessToken = function () {
     return jwt.sign(

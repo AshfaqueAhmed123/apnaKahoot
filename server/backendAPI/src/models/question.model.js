@@ -6,8 +6,7 @@ const questionSchema = new Schema({
         required:true,
     },
     quiz:{
-        // type:mongoose.SchemaTypes.ObjectId
-        type:mongoose.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"Quiz",
     },
     answers:[

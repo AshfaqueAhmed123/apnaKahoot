@@ -12,13 +12,11 @@ const quizSchmea = new Schema({
         required:true,
     },
     owner: {
-        // type:mongoose.SchemaTypes.ObjectId,
-        type:mongoose.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"User",
     },
     questions: [{
-        // type:mongoose.SchemaTypes.ObjectId,
-        type:mongoose.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"Question",
     }],
     maxStudentsAllowed: {
