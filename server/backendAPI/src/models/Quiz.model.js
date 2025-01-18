@@ -19,6 +19,9 @@ const quizSchmea = new Schema({
         type:Schema.Types.ObjectId,
         ref:"Question",
     }],
+    participatants:[{
+        type:Object,
+    }],
     maxStudentsAllowed: {
         type:Number,
         required:true,
