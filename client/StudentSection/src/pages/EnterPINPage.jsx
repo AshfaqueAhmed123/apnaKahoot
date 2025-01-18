@@ -12,7 +12,8 @@ const EnterPINPage = () => {
   const [pin, setPin] = useState("")
   const [loadingText, setLoadingText] = useState("Connecting to kahoot...")
   const [loadingPageState, setLoadingPageState] = useState(false)
-  const handleSubmit = (PIN) => {
+  const handleSubmit = (e, PIN) => {
+    e.preventDefault()
     if (PIN) {
       (async () => {
         setLoadingPageState(prev => !prev)
@@ -36,15 +37,21 @@ const EnterPINPage = () => {
         <div className='w-1/3 flex flex-col items-center justify-center p-4'>
           <img src={kahootLogo} alt="kahoot" className='w-48 mb-10' />
           <div className='w-72 h-36 bg-white rounded-md p-3 flex flex-col items-center justify-center'>
-            <input
-              value={pin}
-              onChange={(e) => {
-                setPin(e.target.value)
+            <form
+              onSubmit={(e) => {
+                handleSubmit(e, pin)
               }}
-              className='w-full h-12 text-center font-bold rounded-md text-[#2f2f2f] border-2 border-gray-500 outline-none focus:border-black' type="text" placeholder='Game PIN' />
-            <button
-              onClick={() => handleSubmit(pin)}
-              className='bg-[#2f2f2f] text-white w-full h-12 mt-3 rounded-md transition-all'>Enter</button>
+            >
+              <input
+                value={pin}
+                onChange={(e) => {
+                  setPin(e.target.value)
+                }}
+                className='w-full h-12 text-center font-bold rounded-md text-[#2f2f2f] border-2 border-gray-500 outline-none focus:border-black' type="text" placeholder='Game PIN' />
+              <button
+                type='submit'
+                className='bg-[#2f2f2f] text-white w-full h-12 mt-3 rounded-md transition-all'>Enter</button>
+            </form>
           </div>
         </div>
       </div>
