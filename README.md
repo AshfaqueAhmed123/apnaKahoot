@@ -1,2 +1,2 @@
 # apnaKahoot
- this is kahoot Quiz platform inspired fullStack project
+## this is kahoot Quiz platform inspired fullStack project
